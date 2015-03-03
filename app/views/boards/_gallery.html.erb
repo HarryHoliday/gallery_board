@@ -1,0 +1,30 @@
+<div class="row">
+  <% @topics.each do |topic| %>
+
+  <div class="col-md">
+    <div class="thumbnail">
+    <% if topic.attachments.size > 0 %>
+    <img src="<%= image_path attachment_path(topic.attachments[0]) %>">
+    <% else %>
+    <%= image_tag 'no-image.png', :plugin => 'gallery_board' %>
+    <% end %>
+      <div class="caption">
+      <p>
+      <%= link_to topic.subject, board_message_path(@board, topic) %>
+      </p>
+      <p>
+      <%= link_to_user(topic.author) %>
+      </p>
+      <p>
+      <%= format_time(topic.created_on) %>
+      </p>
+      <p>
+      <img src="<%= image_path 'comments.png' %>">
+        <%= topic.replies_count %>
+      </p>
+      </div>
+    </div>
+  </div>
+
+  <% end %>
+</div>

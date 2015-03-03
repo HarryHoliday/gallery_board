@@ -1,0 +1,10 @@
+Choose Board style :
+Table<input type="radio" id="b_table" value="0" name="settings[style]" >
+Gallery<input type="radio" id="b_gallery" value="1" name="settings[style]" >
+
+<script>
+var style_list = ['b_table', 'b_gallery', 'b_blog'];
+var style = <%= settings['style'] %>;
+var el = document.getElementById(style_list[style]);
+el.setAttribute('checked', true);
+</script>

@@ -1,0 +1,32 @@
+.thumbnail {
+  text-align: center;
+  width: 240px;
+  display: block;
+  padding: 4px;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: border .2s ease-in-out;
+       -o-transition: border .2s ease-in-out;
+          transition: border .2s ease-in-out;
+}
+.thumbnail > img {
+  width: 240px;
+  height: 200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.row {
+  margin:10px auto;
+  text-align: center;
+}
+.col-md {
+  display: inline-block;
+
+}
+.thumbnail .caption {
+  padding: 9px;
+  color: #333;
+}

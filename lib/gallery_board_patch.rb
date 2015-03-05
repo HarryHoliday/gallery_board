@@ -13,7 +13,6 @@ module GalleryBoardPatch
         def show_with_gallery
             @plugin = Redmine::Plugin.find('gallery_board')
             @settings = Setting.send "plugin_#{@plugin.id}"
-            @style = @settings['style']
             return show_without_gallery
         end
     end

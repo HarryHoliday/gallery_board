@@ -1,3 +1,7 @@
 = gallery_board
 
-Description goes here
+This is plugin for Redmine
+
+To Change layout style to gallery from default style board as table
+
+you can setting style with management plugin of admin menu

@@ -1,10 +1,29 @@
 Choose Board style :
-Table<input type="radio" id="b_table" value="0" name="settings[style]" >
-Gallery<input type="radio" id="b_gallery" value="1" name="settings[style]" >
+Table<input type="radio" id="s_table" value="0" name="settings[style]" >
+Gallery<input type="radio" id="s_gallery" value="1" name="settings[style]" >
+
+<br />
+Choose application board with above choosed style :
+<% @boards.each do |board| %>
+<%= board.name %><input type="checkbox" id="b_<%= board.name %>" name="settings[boards][<%= board.name %>]" >
+<% end %>
 
 <script>
-var style_list = ['b_table', 'b_gallery', 'b_blog'];
+var style_list = ['s_table', 's_gallery', 's_blog'];
 var style = <%= settings['style'] %>;
 var el = document.getElementById(style_list[style]);
 el.setAttribute('checked', true);
+
+<% if settings['boards'] != nil %>
+var board_list = {};
+<% @boards.each do |board| %>
+board_list['<%= board.name %>'] = "<%= settings['boards'][board.name] %>";
+<% end %>
+for(var board in board_list) {
+    if(board_list[board] == 'on') {
+        document.getElementById('b_' + board).setAttribute('checked', true);
+    }
+}
+<% end %>
+
 </script>

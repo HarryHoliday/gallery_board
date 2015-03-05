@@ -30,8 +30,8 @@
 
 <% if @topics.any? %>
 
-  <% if (@settings['style'] == '1' && @settings['boards'][@board.name] == 'on') ||
-      (@settings['style'] == '0' && @settings['boards'][@board.name] != 'on')
+  <% if (@settings['style'] == '1' && @settings['boards'] != nil && @settings['boards'][@board.name] == 'on') ||
+      (@settings['style'] == '0' && @settings['boards'] == nil)
   %>
     <%= render :partial => 'boards/gallery' %>
   <% else %>

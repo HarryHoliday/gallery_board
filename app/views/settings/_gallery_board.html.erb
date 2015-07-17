@@ -1,11 +1,11 @@
-Choose Board style :
+
 Table<input type="radio" id="s_table" value="0" name="settings[style]" >
 Gallery<input type="radio" id="s_gallery" value="1" name="settings[style]" >
-
+<hr />
 <br />
-Choose application board with above choosed style :
 <% @boards.each do |board| %>
-<%= board.name %><input type="checkbox" id="b_<%= board.name %>" name="settings[boards][<%= board.name %>]" >
+<input type="checkbox" id="b_<%= board.name %>" name="settings[boards][<%= board.name %>]" ><%= board.name %>
+<br/>
 <% end %>
 
 <script>

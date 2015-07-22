@@ -9,7 +9,7 @@
     <%= image_tag 'no-image.png', :plugin => 'gallery_board' %>
     <% end %>
       <div class="caption">
-      <p>
+      <p style="width: 200px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
       <%= link_to topic.subject, board_message_path(@board, topic) %>
       </p>
       <p>
